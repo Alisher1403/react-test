@@ -10,7 +10,9 @@ export function useGetProducts(props?: GetProductsParams) {
   const response = useInfiniteQuery({
     queryKey: ["product-list", props],
     queryFn: async ({ pageParam }) => {
-      const response = await axiosClient.get<GetProductsResponse>("https://dummyjson.com/products", { params: pageParam });
+      const response = await axiosClient.get<GetProductsResponse>("https://dummyjson.com/products", {
+        params: { ...props, ...pageParam },
+      });
       dispatch(productsUpserted(response.products));
       return response;
     },

@@ -1,0 +1,16 @@
+export { BinIcon } from "./bin";
+export { CheckIcon } from "./check";
+export { HeartFilledIcon } from "./heart-filled";
+export { HeartFilledActiveIcon } from "./heart-filled-active";
+export { HeartIcon } from "./heart";
+export { HomeIcon } from "./home";
+export { CartIcon } from "./cart";
+export { CategoryGridIcon } from "./category-grid";
+export { CoinIcon } from "./coin";
+export { DashboardFavoriteIcon } from "./heart-1";
+export { LanguageIcon } from "./language";
+export { MinusIcon } from "./minus";
+export { OrdersIcon } from "./orders";
+export { PlusIcon } from "./plus";
+export { ProfileIcon } from "./profile";
+export { SearchIcon } from "./search";

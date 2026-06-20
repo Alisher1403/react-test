@@ -1,1 +1,52 @@
+@import "../shared/assets/fonts/YS_Fonts/fonts.css";
+@import "../shared/style/light.css";
 @import "tailwindcss";
+
+@theme {
+  /*? === Typography === */
+  --font-sans: "YS Text", ui-sans-serif, system-ui, sans-serif;
+
+  --text-subheadline-1: 14px;
+  --text-subheadline-1--line-height: 120%;
+
+  --text-callout: 16px;
+  --text-callout--line-height: 120%;
+
+  --text-body: 17px;
+  --text-body--line-height: 120%;
+
+  --text-headline: 21px;
+  --text-headline--line-height: 120%;
+
+  --text-title: 24px;
+  --text-headline--line-height: 120%;
+
+  /*? === Color Tokens === */
+  --color-primary: var(--theme-primary);
+  --color-label: var(--theme-label);
+  --color-label-secondary: var(--theme-label-secondary);
+  --color-price-sale: var(--theme-price-sale);
+  --color-container-primary: var(--theme-container-primary);
+  --color-container-secondary: var(--theme-container-secondary);
+  --color-control-secondary: var(--theme-control-secondary);
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply text-label antialiased;
+  }
+}
+
+.container {
+  @apply max-w-360 w-full mx-auto px-3;
+}
+.container-large {
+  @apply max-w-[1728px] w-full mx-auto px-3;
+}
+.container-small {
+  @apply max-w-295 w-full mx-auto px-3;
+}

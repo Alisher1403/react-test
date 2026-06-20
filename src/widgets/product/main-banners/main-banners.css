@@ -1,0 +1,9 @@
+.main-banners .swiper-slide {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+
+.main-banners .swiper-slide-active {
+  opacity: 1;
+}

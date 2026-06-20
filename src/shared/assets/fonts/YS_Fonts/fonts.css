@@ -1,0 +1,36 @@
+/*
+ * YS Text font software © 2016 Schwartzco Inc.
+ * License: http://commercialtype.com/eula
+ */
+
+@font-face {
+  font-family: "YS Text";
+  src: url("YS Text-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YS Text";
+  src: url("YS Text-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YS Text";
+  src: url("YS Text-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YS Text";
+  src: url("YS Text-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

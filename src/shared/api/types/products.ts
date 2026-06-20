@@ -33,6 +33,9 @@ export type Product = {
   meta: ProductMeta;
   images: string[];
   thumbnail: string;
+  // Custom fields
+  isFavorite: boolean;
+  cartCount: number;
 };
 
 export type ProductDimensions = {

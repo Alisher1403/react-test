@@ -1,0 +1,43 @@
+@reference "../../../app/app.css";
+
+.button {
+  @apply inline-flex cursor-pointer items-center justify-center gap-2 font-bold outline-none;
+  @apply active:scale-95;
+  @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.button--primary {
+  @apply bg-yellow-400 text-label hover:bg-yellow-300 active:bg-yellow-400;
+}
+
+.button--default {
+  @apply bg-gray-200 text-label hover:bg-gray-300 active:bg-gray-400;
+}
+
+.button--error {
+  @apply bg-red-600 text-white hover:bg-red-500 active:bg-red-600;
+}
+
+.button--warning {
+  @apply bg-amber-500 text-label hover:bg-amber-400 active:bg-amber-500;
+}
+
+.button--success {
+  @apply bg-green-600 text-white hover:bg-green-500 active:bg-green-600;
+}
+
+.button--small {
+  @apply min-h-8 rounded-lg px-3 text-subheadline-1;
+}
+
+.button--medium {
+  @apply min-h-12 rounded-2xl px-5 text-callout;
+}
+
+.button--large {
+  @apply min-h-14 rounded-2xl px-7 text-callout;
+}
+
+.button__spinner {
+  @apply size-4 shrink-0 animate-spin rounded-full border-2 border-current border-r-transparent;
+}
