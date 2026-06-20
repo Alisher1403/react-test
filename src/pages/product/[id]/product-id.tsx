@@ -1,9 +1,9 @@
 import { ScrollRestoration } from "react-router";
 import { useModel } from "./product-id.model";
 import { ProductAbout } from "./ui/product-about";
-import { ProductActions } from "./ui/product-actions";
 import { ProductAside } from "./ui/product-aside";
 import { ProductGallery } from "./ui/product-gallery";
+import { ProductHeader } from "./ui/header";
 import { ProductReviews } from "./ui/product-reviews";
 import { ProductSummary } from "./ui/product-summary";
 import { SimilarProducts } from "./ui/similar-products";
@@ -13,11 +13,15 @@ export default function ProductId() {
   const { data } = response;
 
   if (response.isLoading) {
-    return <div className="container py-16 text-label-secondary">Loading product...</div>;
+    return (
+      <div className="flex h-[80vh] items-center justify-center">
+        <span className="size-16 animate-spin rounded-full border-4 border-container-secondary border-t-primary" />
+      </div>
+    );
   }
 
   if (response.isError) {
-    return <div className="container py-16 text-price-sale">Unable to load this product.</div>;
+    return <div className="container py-16 text-price-sale">Не удалось загрузить товар.</div>;
   }
 
   if (!data) return null;
@@ -26,10 +30,10 @@ export default function ProductId() {
     <section className="container-large pb-10 sm:pb-16">
       <ScrollRestoration />
 
-      <ProductActions data={data} />
+      <ProductHeader product={data} />
 
-      <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_22.5rem]">
-        <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,.85fr)]">
+      <div className="grid items-start gap-12 xl:grid-cols-[calc(100%-392px)_360px]">
+        <div className="grid gap-6 lg:grid-cols-2">
           <ProductGallery images={data.images} title={data.title} />
           <ProductSummary product={data} />
         </div>

@@ -27,7 +27,6 @@ export function ImagePreview(props: ImagePreviewProps) {
       className="fixed inset-0 z-50 overflow-hidden bg-black md:bg-white"
     >
       <button
-        type="button"
         onClick={close}
         className="fixed top-5 right-5 z-30 grid size-11 cursor-pointer place-items-center rounded-full bg-black/35 text-3xl leading-none text-white shadow-sm backdrop-blur-sm transition hover:scale-105 md:bg-white md:text-label"
       >
@@ -38,7 +37,6 @@ export function ImagePreview(props: ImagePreviewProps) {
         {items.map((item, index) => (
           <button
             key={index}
-            type="button"
             onClick={() => setActiveIndex(index)}
             className={`aspect-square w-full shrink-0 cursor-pointer overflow-hidden rounded-lg bg-white ring-2 transition ${index === activeIndex ? "ring-label" : "ring-transparent hover:ring-gray-300"}`}
           >
@@ -56,14 +54,12 @@ export function ImagePreview(props: ImagePreviewProps) {
       {items.length > 1 && (
         <>
           <button
-            type="button"
             onClick={showPrevious}
             className="fixed top-1/2 left-4 z-20 hidden size-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-white text-2xl shadow-md transition hover:scale-105 md:grid md:left-28"
           >
             ←
           </button>
           <button
-            type="button"
             onClick={showNext}
             className="fixed top-1/2 right-4 z-20 hidden size-11 -translate-y-1/2 cursor-pointer place-items-center rounded-full bg-white text-2xl shadow-md transition hover:scale-105 md:grid"
           >
@@ -76,7 +72,6 @@ export function ImagePreview(props: ImagePreviewProps) {
         {items.map((item, index) => (
           <button
             key={index}
-            type="button"
             onClick={() => setActiveIndex(index)}
             className={`size-16 shrink-0 cursor-pointer overflow-hidden rounded-xl bg-white ring-2 ring-offset-2 ring-offset-black transition ${index === activeIndex ? "ring-white" : "ring-transparent"}`}
           >

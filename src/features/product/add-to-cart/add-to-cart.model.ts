@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@src/app/store/hooks";
 import { cartProductAdded, cartProductRemoved } from "@src/entities/product/cart.slice";
 import { productSelectors, productsUpdated } from "@src/entities/product/product.slice";
+import type { MouseEvent } from "react";
 
 type UseAddToCartProps = {
   productId: number;
@@ -13,14 +14,16 @@ export function useAddToCart({ productId }: UseAddToCartProps) {
   const cartCount = product?.cartCount ?? 0;
   const isMaximumReached = Boolean(product && cartCount >= product.stock);
 
-  function increment() {
+  function increment(e?: MouseEvent<HTMLButtonElement>) {
+    if (e) e.preventDefault();
     if (!product || cartCount >= product.stock) return;
 
     if (!isInCart) dispatch(cartProductAdded(product.id));
     dispatch(productsUpdated({ id: product.id, changes: { cartCount: cartCount + 1 } }));
   }
 
-  function decrement() {
+  function decrement(e?: MouseEvent<HTMLButtonElement>) {
+    if (e) e.preventDefault();
     if (!product || cartCount === 0) return;
     const nextCount = cartCount - 1;
     dispatch(productsUpdated({ id: product.id, changes: { cartCount: nextCount } }));

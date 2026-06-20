@@ -18,7 +18,7 @@ export function useGetProductsByCategory(props: GetProductsByCategoryProps) {
     queryKey: ["product-list", "category", categoryName, { limit }],
     queryFn: async () => {
       const response = await axiosClient.get<GetProductsResponse>(
-        `https://dummyjson.com/products/category/${encodeURIComponent(categoryName)}`,
+        `https://dummyjson.com/products/category/${categoryName}`,
         { params: props },
       );
 

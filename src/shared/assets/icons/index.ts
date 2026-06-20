@@ -1,4 +1,5 @@
 export { BinIcon } from "./bin";
+export { BackIcon } from "./back";
 export { CheckIcon } from "./check";
 export { HeartFilledIcon } from "./heart-filled";
 export { HeartFilledActiveIcon } from "./heart-filled-active";

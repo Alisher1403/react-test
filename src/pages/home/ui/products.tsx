@@ -13,7 +13,7 @@ export default function Products(props: ProductsProps) {
 
   return (
     <section className="container grid grid-cols-2 gap-x-2 gap-y-6 sm:grid-cols-3 sm:gap-x-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-      {isError && <p className="col-span-full py-12 text-center text-price-sale">Unable to load products.</p>}
+      {isError && <p className="col-span-full py-12 text-center text-price-sale">Не удалось загрузить товары.</p>}
 
       {isLoading && emptyNodeList(18, ProductCardSkeleton)}
 

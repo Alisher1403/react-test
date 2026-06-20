@@ -17,16 +17,15 @@ export function CartItems({ itemsCount, productIds, onClear }: CartItemsProps) {
           <span className="p-1 rounded-md bg-primary">
             <CheckIcon className="size-5" />
           </span>
-          <span className="ml-2">{itemsCount} items</span>
+          <span className="ml-2">Товаров: {itemsCount}</span>
         </p>
         {!!productIds.length && (
           <button
-            type="button"
             onClick={onClear}
             className="flex shrink-0 cursor-pointer items-center gap-1 whitespace-nowrap text-sm font-medium hover:text-red-600"
           >
             <BinIcon className="size-4" />
-            <span>Delete all</span>
+            <span>Удалить всё</span>
           </button>
         )}
       </header>
@@ -37,8 +36,8 @@ export function CartItems({ itemsCount, productIds, onClear }: CartItemsProps) {
           render={({ item: productId }) => <CartItem key={productId} productId={productId} />}
           ListEmptyComponent={
             <div className="rounded-3xl bg-container-primary px-6 py-16 text-center">
-              <h2 className="text-xl font-bold">Your cart is empty</h2>
-              <p className="mt-2 text-label-secondary">Add products to see them here.</p>
+              <h2 className="text-xl font-bold">Корзина пуста</h2>
+              <p className="mt-2 text-label-secondary">Добавьте товары, и они появятся здесь.</p>
               <Link to="/">
                 <Button type="primary" size="small" className="mt-4">
                   На главную

@@ -12,7 +12,7 @@ export function LargeButton({ productId }: LargeButtonProps) {
   if (cartCount === 0) {
     return (
       <Button type="primary" size="large" onClick={increment} className="w-full">
-        Add to cart
+        В корзину
       </Button>
     );
   }
@@ -20,20 +20,18 @@ export function LargeButton({ productId }: LargeButtonProps) {
   return (
     <div className="flex min-h-14 w-full items-center justify-between rounded-2xl bg-container-primary px-2">
       <button
-        type="button"
         onClick={decrement}
         className="p-2 cursor-pointer rounded-xl text-label-secondary hover:text-label"
       >
-        <MinusIcon />
+        <MinusIcon className="size-4" />
       </button>
       <span className="font-bold">{cartCount}</span>
       <button
-        type="button"
         disabled={isMaximumReached}
         onClick={increment}
         className="p-2 cursor-pointer rounded-xl text-label-secondary hover:text-label disabled:cursor-not-allowed disabled:opacity-40"
       >
-        <PlusIcon />
+        <PlusIcon className="size-4" />
       </button>
     </div>
   );

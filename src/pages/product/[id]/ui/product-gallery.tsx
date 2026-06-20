@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 type ProductGalleryProps = {
   images: string[];
@@ -14,22 +16,36 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
   }
 
   return (
-    <div className="grid w-full min-w-0 max-w-150 gap-3 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:gap-4">
-      <div className="order-2 flex gap-2 overflow-x-auto pb-1 sm:order-1 sm:flex-col sm:overflow-visible sm:pb-0">
-        {images.map((image) => (
-          <button
-            key={image}
-            type="button"
-            onClick={() => setSelectedImage(image)}
-            className={`size-16 shrink-0 cursor-pointer overflow-hidden rounded-lg bg-container-primary p-1 ring-2 transition sm:size-18 sm:rounded-xl ${image === activeImage ? "ring-label" : "ring-transparent hover:ring-gray-300"}`}
-          >
-            <img src={image} alt="" className="h-full w-full object-contain" />
-          </button>
-        ))}
+    <div className="w-full min-w-0 max-w-150">
+      <div className="-mx-2 lg:hidden">
+        <Swiper spaceBetween={4} grabCursor>
+          {images.map((image, index) => (
+            <SwiperSlide key={image}>
+              <div className="aspect-3/4 overflow-hidden rounded-xl bg-container-primary">
+                <img src={image} alt={`${title} ${index + 1}`} className="h-full w-full object-contain" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
       </div>
 
-      <div className="order-1 flex aspect-square min-w-0 items-center justify-center overflow-hidden rounded-xl bg-container-primary p-3 sm:order-2 sm:rounded-2xl sm:p-6">
-        <img src={activeImage} alt={title} className="h-full w-full object-contain" />
+      <div className="hidden w-full min-w-0 grid-cols-[4.5rem_minmax(0,1fr)] gap-4 lg:grid">
+        <div className="flex flex-col gap-2">
+          {images.map((image) => (
+            <button
+              key={image}
+              onClick={() => setSelectedImage(image)}
+              className={`size-18 shrink-0 cursor-pointer overflow-hidden rounded-xl bg-container-primary p-1 ring-2 transition ${image === activeImage ? "ring-label" : "ring-transparent hover:ring-gray-300"}`}
+            >
+              <img src={image} alt="" className="h-full w-full object-contain" />
+            </button>
+          ))}
+        </div>
+
+        <div className="flex aspect-square min-w-0 items-center justify-center overflow-hidden rounded-2xl bg-container-primary p-6">
+          <img src={activeImage} alt={title} className="h-full w-full object-contain" />
+        </div>
       </div>
     </div>
   );

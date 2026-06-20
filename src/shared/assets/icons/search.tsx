@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 
 export function SearchIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" {...props}>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fill="currentColor"
         fillRule="evenodd"

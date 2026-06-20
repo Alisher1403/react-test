@@ -14,37 +14,37 @@ export function ProductSummary({ product }: ProductSummaryProps) {
         <span className="font-medium text-amber-500">
           {"\u2605"} {product.rating}
         </span>
-        <span className="text-label-secondary">({product.reviews.length} reviews)</span>
-        <span className="text-label-secondary">&middot; {product.stock} available</span>
+        <span className="text-label-secondary">Отзывов: {product.reviews.length}</span>
+        <span className="text-label-secondary">&middot; В наличии: {product.stock}</span>
       </div>
 
       <dl className="mt-5 space-y-3 text-sm sm:mt-8">
         <div className="flex items-end justify-between gap-2 border-b border-dotted border-gray-300">
-          <dt className="-mb-px bg-white pr-2 text-label-secondary">SKU</dt>
+          <dt className="-mb-px bg-white pr-2 text-label-secondary">Артикул</dt>
           <dd className="-mb-px bg-white pl-2 font-medium">{product.sku}</dd>
         </div>
         <div className="flex items-end justify-between gap-2 border-b border-dotted border-gray-300">
-          <dt className="-mb-px bg-white pr-2 text-label-secondary">Brand</dt>
-          <dd className="-mb-px bg-white pl-2 font-medium">{product.brand || "Not specified"}</dd>
+          <dt className="-mb-px bg-white pr-2 text-label-secondary">Бренд</dt>
+          <dd className="-mb-px bg-white pl-2 font-medium">{product.brand || "Не указан"}</dd>
         </div>
         <div className="flex items-end justify-between gap-2 border-b border-dotted border-gray-300">
-          <dt className="-mb-px bg-white pr-2 text-label-secondary">Dimensions</dt>
+          <dt className="-mb-px bg-white pr-2 text-label-secondary">Размеры</dt>
           <dd className="-mb-px max-w-3/5 bg-white pl-2 text-right font-medium">
-            {product.dimensions.width} x {product.dimensions.height} x {product.dimensions.depth} cm
+            {product.dimensions.width} x {product.dimensions.height} x {product.dimensions.depth} см
           </dd>
         </div>
         <div className="flex items-end justify-between gap-2 border-b border-dotted border-gray-300">
-          <dt className="-mb-px bg-white pr-2 text-label-secondary">Weight</dt>
-          <dd className="-mb-px bg-white pl-2 font-medium">{product.weight} g</dd>
+          <dt className="-mb-px bg-white pr-2 text-label-secondary">Вес</dt>
+          <dd className="-mb-px bg-white pl-2 font-medium">{product.weight} г</dd>
         </div>
         <div className="flex items-end justify-between gap-2 border-b border-dotted border-gray-300">
-          <dt className="-mb-px bg-white pr-2 text-label-secondary">Stock</dt>
-          <dd className="-mb-px bg-white pl-2 font-medium">{product.stock} items</dd>
+          <dt className="-mb-px bg-white pr-2 text-label-secondary">Остаток</dt>
+          <dd className="-mb-px bg-white pl-2 font-medium">{product.stock} шт.</dd>
         </div>
       </dl>
 
       <a href="#characteristics" className="mt-4 inline-flex text-sm font-bold hover:underline">
-        All specifications &rarr;
+        Все характеристики &rarr;
       </a>
     </section>
   );

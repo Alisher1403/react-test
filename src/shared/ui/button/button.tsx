@@ -17,7 +17,6 @@ export function Button(props: ButtonProps) {
   return (
     <button
       {...buttonProps}
-      type="button"
       disabled={isDisabled}
       className={twMerge("button", `button--${type}`, `button--${size}`, className)}
     >

@@ -1,5 +1,6 @@
 import { useGetProductCategories } from "@src/features/product";
 import { emptyNodeList } from "@src/shared/utils/react-utils";
+import { Link } from "react-router";
 
 export function DefaultLayoutCategories() {
   const { data, isLoading } = useGetProductCategories();
@@ -13,9 +14,13 @@ export function DefaultLayoutCategories() {
             emptyNodeList(10, (p) => <span {...p} className="h-4 w-24 animate-pulse rounded-full bg-gray-200" />)}
 
           {categories.map((category) => (
-            <span key={category} className="cursor-default capitalize text-label-secondary hover:text-label">
+            <Link
+              key={category}
+              to={`/catalog/${category}`}
+              className="capitalize text-label-secondary hover:text-label"
+            >
               {category}
-            </span>
+            </Link>
           ))}
         </div>
       </div>

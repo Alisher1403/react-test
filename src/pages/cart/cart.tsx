@@ -1,3 +1,4 @@
+import { ScrollRestoration } from "react-router";
 import { useModel } from "./cart.model";
 import { CartItems } from "./ui/cart-items";
 import { CartRecommendations } from "./ui/cart-recommendations";
@@ -8,7 +9,9 @@ export default function Cart() {
 
   return (
     <main className="container-small px-4 py-8 sm:px-6">
-      <h1 className="text-3xl font-bold">Cart</h1>
+      <ScrollRestoration />
+
+      <h1 className="text-3xl font-bold">Корзина</h1>
 
       <div className="mt-5 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
         <CartItems itemsCount={itemsCount} productIds={productIds} onClear={clearCart} />

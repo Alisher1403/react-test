@@ -50,3 +50,12 @@
 .container-small {
   @apply max-w-295 w-full mx-auto px-3;
 }
+
+.scrollbar-hidden {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
